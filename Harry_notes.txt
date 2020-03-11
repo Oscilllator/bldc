@@ -1,0 +1,15 @@
+bringup of st-link:
+https://fishpepper.de/2016/09/16/installing-using-st-link-v2-to-flash-stm32-on-linux/
+, or:
+git clone https://github.com/texane/stlink stlink.git
+cd stlink
+make
+#install binaries:
+sudo cp build/Debug/st-* /usr/local/bin
+#install udev rules
+sudo cp etc/udev/rules.d/49-stlinkv* /etc/udev/rules.d/
+#and restart udev
+sudo udevadm control --reload
+
+#########
+command "make upload" for both bootloader and main application is what you want
